@@ -1,11 +1,61 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+<head>
+  <title>首页</title>
+  <%- include('head',{}) %>
+    <!-- <link rel="stylesheet" href="/public/stylesheets/index.js"> -->
+</head>
+
+<body>
+  <%- include('header',{}) %>
+  <div class="layui-container">
+    <div class="layui-row">
+      <!-- <ul class="layui-nav layui-bg-molv" lay-filter="">
+        <i class="layui-icon layui-icon-tree"></i>
+        <li class="layui-nav-item">
+          <a href="">写文章<span class="layui-badge-dot"></span></a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="">退出</a>
+        </li>
+      </ul> -->
+      
+      <div>
+        <table class="layui-table">
+          <colgroup>
+            <col width="150">
+            <col width="200">
+            <col>
+          </colgroup>
+          <thead>
+            <tr>
+              <td>1</td>
+              <td><a href="">Bubble</a></td>
+              <td>2021-01-20 09:10:00</td>
+              <td><a href="">编辑</a><a href="">删除</a></td>
+              <!-- <th></th> -->
+            </tr> 
+          </thead>
+          <tbody>
+            <tr>
+              <td>2</td>
+              <td><a href="">Bubble01</a></td>
+              <td>2021-01-21 09:10:00</td>
+              <td><a href="">编辑</a><a href="">删除</a></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><a href="">Bubble02</a></td>
+              <td>2021-01-22 09:10:00</td>
+              <td><a href="">编辑</a><a href="">删除</a></td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>

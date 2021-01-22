@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/libs/layui/css/layui.css"> -->
+    <%- include('head',{}) %>
+
+    <title>登录</title>
+</head>
+
+<body>
+    <div class="layui-container">
+        <div class="layui-row">
+            <form class="layui-form" action="">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">用户名</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="title" required placeholder="请输入用户名" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">密码</label>
+                    <div class="layui-input-block">
+                        <input type="password" name="title" required class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                      <button class="layui-btn" lay-submit lay-filter="formDemo">登录</button>
+                      
+                    </div>
+                  </div>
+                  <div>没有账号，<a href="" style="color: cornflowerblue;">立即注册</a></div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
