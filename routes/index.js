@@ -21,4 +21,9 @@ router.get('/write',function(req,res){
 router.get('/regist',function(req,res){
   res.render('regist',{})
 })
+
+//0000001页路由配置
+router.get('/0000001',function(req,res){
+  res.render('0000001',{})
+})
 module.exports = router;

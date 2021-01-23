@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="/libs/layui/css/layui.css"> -->
     <%- include('head',{}) %>
-
+    <link rel="stylesheet" href="/stylesheets/login.css">
     <title>登录</title>
 </head>
 
@@ -16,25 +16,26 @@
     <div class="layui-container">
         <div class="layui-row">
             <form class="layui-form" action="">
+                <div class="head">登录</div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">用户名</label>
                     <div class="layui-input-block">
-                        <input type="text" name="title" required placeholder="请输入用户名" class="layui-input">
+                        <input type="text" name="username" required placeholder="请输入用户名" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">密码</label>
                     <div class="layui-input-block">
-                        <input type="password" name="title" required class="layui-input">
+                        <input type="password" name="password" required placeholder="请输入密码" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <div class="layui-input-block">
-                      <button class="layui-btn" lay-submit lay-filter="formDemo">登录</button>
-                      
+                      <button type="submit" class="layui-btn" lay-submit lay-filter="formDemo">登录</button>
+                      <button type="reset" class="layui-btn" lay-submit lay-filter="formDemo">重置</button>
                     </div>
                   </div>
-                  <div>没有账号，<a href="" style="color: cornflowerblue;">立即注册</a></div>
+                  <div class="text-01">没有账号，<a href="regist">立即注册</a></div>
             </form>
         </div>
     </div>
