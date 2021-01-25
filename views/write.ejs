@@ -19,16 +19,17 @@
     width: 800px;
 }
 .layui-btn{
-    float: right;
-    margin-right: 230px;
+    float: left;
+    margin-left: 120px;
+    background: cornflowerblue;
 }
 </style>
 <body>
-    <%- include('header',{}) %>
+    <%- include('header',{username}) %>
     <div class="layui-container">
         <div class="layui-row">
 
-            <form class="layui-form" action="">
+            <form class="layui-form" action="/writes/add" method="POST">
                 <div class="head"></div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">标题</label>
@@ -39,10 +40,10 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">内容</label>
                     <div class="layui-input-block">
-                        <textarea name="" id="" cols="110" rows="20"></textarea>
+                        <textarea name="content" id="" cols="110" rows="20"></textarea>
                     </div>
                 </div>
-                <button type="button" class="layui-btn">发布</button> 
+                <button class="layui-btn">发布</button> 
             </form>
 
             

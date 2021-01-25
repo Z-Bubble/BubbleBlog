@@ -13,7 +13,14 @@
       <a href="/write">写文章<span class="layui-badge-dot"></span></a>
     </li>
     <li class="layui-nav-item">
-      <a href="login">登录</a>
+      <% if(username) { %>
+        <p style="color: coral;">
+          <%= username %>
+        </p>
+      <% } else { %>
+    
+        <a href="login">登录</a>
+      <% } %>
     </li>
     <li class="layui-nav-item">
       <a href="details">详情</a>

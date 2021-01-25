@@ -3,7 +3,9 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+
+  let username = req.session.username || ''
+  res.render('index', { username });
 });
 //登陆路由配置
 router.get('/login',function(req,res){
@@ -11,11 +13,13 @@ router.get('/login',function(req,res){
 })
 //文章详情页路由配置
 router.get('/details',function(req,res){
-  res.render('details',{})
+  let username = req.session.username || ''
+  res.render('details',{username})
 })
 //写文章页路由配置
 router.get('/write',function(req,res){
-  res.render('write',{})
+  let username = req.session.username || ''
+  res.render('write',{username})
 })
 //注册页路由配置
 router.get('/regist',function(req,res){
