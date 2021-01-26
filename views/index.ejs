@@ -9,6 +9,8 @@
 
 <body>
   <%- include('header',{username}) %>
+
+  
   <div class="layui-container">
     <div class="layui-row">
       <!-- <ul class="layui-nav layui-bg-molv" lay-filter="">
@@ -23,16 +25,21 @@
       
       <div>
         <table class="layui-table">
-          <colgroup>
+          <!-- <colgroup>
             <col width="150">
             <col width="200">
             <col>
-          </colgroup>
-          <thead>
+          </colgroup> -->
+
+          <!-- <thead> -->
+          <tbody>
+            <% data.map(item=>{ %>
             <tr>
-              <td>1</td>
-              <td><a href="">Bubble</a></td>
-              <td>2021-01-20 09:10:00</td>
+              
+              <td><%= item.id %></td>
+              <td><a href=""><%= item.title %></a></td>
+              <td><%= item.datetime %></td>
+              <td><%= item.content %></td>
               <td>
                 <a href="">
                   编辑
@@ -43,10 +50,13 @@
                   <i class="layui-icon layui-icon-delete"></i>
                 </a>
               </td>
-              <!-- <th></th> -->
+              
             </tr> 
-          </thead>
-          <tbody>
+            <% }) %>
+          </tbody>
+          <!-- </thead> -->
+          
+          <!-- <tbody>
             <tr>
               <td>2</td>
               <td><a href="">Bubble01</a></td>
@@ -77,7 +87,7 @@
                 </a>
               </td>
             </tr>
-          </tbody>
+          </tbody> -->
         </table>
         
       </div>

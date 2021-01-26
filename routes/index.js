@@ -1,11 +1,18 @@
 var express = require('express');
 var router = express.Router();
 
+//文章模块导入
+let Write = require('../models/write');
+
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', async function(req, res, next) {
+
+  let data = await Write.find()
+  console.log(data);
 
   let username = req.session.username || ''
-  res.render('index', { username });
+
+  res.render('index', { username,data });
 });
 //登陆路由配置
 router.get('/login',function(req,res){
