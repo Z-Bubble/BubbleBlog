@@ -9,6 +9,9 @@
       .layui-card{
         background-color: rgba(253, 246, 246, 0.7);
       }
+      .div img{
+        width: 100%;
+      }
     </style>
 </head>
 <body>
@@ -20,13 +23,19 @@
                 <div
                  class="layui-card-header"
                  style="font-size: large;font-weight: bold;">
-                 最新资讯
+                 <%= data.title %>
                 </div>
                 <div class="layui-card-body" style="font-size: small;">
-                  作者：Bubble 发布时间：2021-01-22 16:30:00
+                  <span>
+                    作者：<%= data.author %>
+                  </span>
+                  <span>
+                    发布时间：<%= data.time %>
+                  </span>
+                   
                 </div>
-                <div class="layui-card-body">
-                  秃头少女是头秃女孩
+                <div class="div layui-card-body">
+                  <%- data.content %>
                 </div>
             </div>
 

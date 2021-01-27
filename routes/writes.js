@@ -14,14 +14,14 @@ let fs = require('fs')
 //添加博客接口
 router.post('/add',(req,res,next)=>{
   console.log(req.body);
-    let date = new Date();
-    console.log(date);
-    // let Number;
+    //let date = new Date();
+   // console.log(date);
     let writeInfo = {
         title:req.body.title,
         content:req.body.content,
-        datetime:date,
-        // id:Number,
+        author:req.body.author,
+        //datetime:date,
+        datetime:Date.now(),
       }
       //页面表单数据，放入模型
 let writeI = new Write(writeInfo)

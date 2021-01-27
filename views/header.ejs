@@ -9,23 +9,27 @@
   </ul> -->
   <ul class="layui-nav" lay-filter="">
     <i class="layui-icon layui-icon-tree"></i>
+    
     <li class="layui-nav-item">
       <a href="/write">写文章<span class="layui-badge-dot"></span></a>
     </li>
-    <li class="layui-nav-item">
+    <li class="layui-nav-item" class="right">
       <% if(username) { %>
         <p style="color: coral;">
           <%= username %>
         </p>
       <% } else { %>
     
-        <a href="login">登录</a>
+        <a href="login">登录/注册</a>
       <% } %>
+    </li>
+    <li class="layui-nav-item">
+      <a href="/">首页</a>
     </li>
     <li class="layui-nav-item">
       <a href="details">详情</a>
     </li>
-    <li class="layui-nav-item">
+    <li class="layui-nav-item" class="right">
       <a href="login">退出</a>
     </li>
   </ul>
@@ -33,5 +37,8 @@
   <style>
   .layui-nav{
     background-color: rgba(128, 128, 128, 0.2);
+  }
+  .right{
+    float: right;
   }
   </style>
