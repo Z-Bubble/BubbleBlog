@@ -68,7 +68,7 @@ router.get('/write',async function(req,res){
 
   let id = req.query._id || ''
   
-  
+  //如果存在id渲染页面数据
   if (id) {
     let page = req.query.page
     console.log(id);
@@ -79,7 +79,12 @@ router.get('/write',async function(req,res){
     dataa['time'] = moment(dataa.datetime).utcOffset(480).format('YYYY-MM-DD HH:mm:ss')
     res.render('write',{username,dataa})
   }else{
-    res.render('write',{username})
+    //如果不存在id，直接渲染无数据页面
+    let dataa = {
+      title:'',
+      content:''
+    }
+    res.render('write',{username,dataa})
   }
   
 })

@@ -16,22 +16,63 @@ router.post('/add',(req,res,next)=>{
   console.log(req.body);
     //let date = new Date();
    // console.log(date);
-    let writeInfo = {
+    // let writeInfo = {
+    //     title:req.body.title,
+    //     content:req.body.content,
+    //     author:req.body.author,
+    //     //datetime:date,
+    //     datetime:Date.now(),
+    //   }
+    
+    
+    //首先来获取下文章id，依次判断是新增还是编辑
+    let nId = req.body.dId || ''
+    //console.log(nId);
+    //新增
+    if (!nId) {
+      var writeInfo = {
         title:req.body.title,
         content:req.body.content,
         author:req.body.author,
-        //datetime:date,
         datetime:Date.now(),
       }
-      //页面表单数据，放入模型
-let writeI = new Write(writeInfo)
+      //console.log(writeInfo);
 
-//保存
-writeI.save((err,result)=>{
-  if(!err){
-    res.send(result)
-  }
-})
+      //页面表单数据，放入模型
+      let writeI = new Write(writeInfo)
+
+      //保存
+      writeI.save((err,result)=>{
+        if(!err){
+          //res.send(result)
+          res.redirect('/')
+        }
+      })
+
+
+    } else{//编辑
+      let page = req.body.page
+      //_id
+      //查找一条数据并修改内容
+      //新数据获取
+      let writeInfo = {
+        title:req.body.title,
+        content:req.body.content,
+        author:req.body.author,
+        datetime:Date.now(),
+      }
+      Write.findByIdAndUpdate(nId,writeInfo,{new:true},(err,result)=>{
+        if (!err) {
+          res.redirect(`/?page=${page}`)
+        }
+      })
+
+    }
+
+
+
+      
+
 })
 
 
@@ -71,6 +112,23 @@ router.post('/upload',(req,res,next)=>{
       })
      })
   
+})
+
+
+//文章删除的接口
+router.get('/delete',(req,res,next) => {
+  let id = req.query._id
+  let page = req.query.page
+  console.log(id,page);
+  //从数据库删除一条
+  Write.deleteOne({ _id:id }, err => {
+    if (!err) {
+      //res.send('删除成功')
+      //返回删除前那个页面
+      res.redirect(`/?page=${page}`)
+    }
+  })
+
 })
 
 module.exports = router;

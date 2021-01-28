@@ -39,6 +39,11 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">标题</label>
                         <div class="layui-input-block">
+                            <!-- 
+                                在提交的时候，需要用到的信息，顺便提交过去
+                             -->
+                            <input type="hidden" name="dId" id="" value="<%=dataa._id%>">
+                            <input type="hidden" name="page" id="" value="<%=dataa.page%>">
                             <input type="text" name="title" value="<%= dataa.title %>" required placeholder="请输入文章标题" class="layui-input">
                         </div>
                     </div>
@@ -51,10 +56,17 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">内容</label>
                         <div class="layui-input-block">
-                            <textarea name="content" id="editor" cols="110" rows="20"><%- dataa.content %></textarea>
+                            <textarea name="content" id="editor" cols="110" rows="20">
+                                <%- dataa.content %>
+                            </textarea>
                         </div>
                     </div>
+
+                    <% if(!dataa._id){%>
                     <button class="layui-btn">发布</button>
+                    <%}else{%>
+                    <button class="layui-btn">确认修改</button>
+                    <%}%>
                 </form>
 
 
